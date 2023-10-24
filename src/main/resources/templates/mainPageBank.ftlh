@@ -6,15 +6,15 @@
 </head>
 <body>
     <div>
-        <h2>Профиль: ${men}</h2>
+        <h2>Профиль: </h2>
     </div>
 
     <div>
-        <ul style="display: flex">
+        <ul>
         <li><a>Вклады</a></li>
         <li><a>Страхование</a></li>
         <li><a>Ипотека</a></li>
-        <li><a>Кредит</a></li>
+        <li><a href="/credit">Кредит - количество кредитов:</a></li>
         <li><a>Вклады</a></li>
         </ul>
     </div>

@@ -9,15 +9,21 @@
 </head>
 <body>
     <form method="POST" action="/credit">
-
         Credit name <input type="text"  name="creditName"><br><br>
+        Loan amount <input type="text" name="loanAmount"><br><br>
         Loan owner <input type="text" name="loanOwner"><br><br>
+        Interest rate <input type="text"  name="interestRate"><br><br>
+        Term <input type="text" name="term"><br><br>
         <input type="submit" value="Создать">
     </form>
 
     <#list credits as credit>
         <h4><a href="/credit/${credit.id}">${credit.getCreditName()}</a></h4>
     </#list>
+
+    <form method="GET" action="/home">
+        <input type="submit" value="Назад">
+    </form>
 
 </body>
 </html>
