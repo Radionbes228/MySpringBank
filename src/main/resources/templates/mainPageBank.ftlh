@@ -11,16 +11,15 @@
 
     <div>
         <ul>
-        <li><a>Вклады</a></li>
-        <li><a>Страхование</a></li>
-        <li><a>Ипотека</a></li>
+        <li><a href="/contribution">Ипотека</a></li>
         <li><a href="/credit">Кредит - количество кредитов:</a></li>
         <li><a>Вклады</a></li>
+        <li><a>Перевод</a></li>
         </ul>
     </div>
 
     <div>
-        <h3>Кошелёк</h3>
+        <h3>Карточка 1</h3>
         <h5>Some numbers to case</h5>
     </div>
 </body>

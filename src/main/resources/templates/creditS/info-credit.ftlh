@@ -14,7 +14,6 @@
         <h3>${credit.getLoanAmount()} р.</h3>
         <h3>${credit.getLoanOwner()}</h3>
         <h3>${credit.getInterestRate()}%</h3>
-        <h3>${credit.getInstant()}</h3>
     </form>
 
     <form method="POST" action="/credit/delete/${credit.getId()}">

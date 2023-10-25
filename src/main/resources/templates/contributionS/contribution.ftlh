@@ -13,12 +13,12 @@
         Имя вклада <input type="text" name="name">
         Сумма вклада <input type="number" name="sum">
         Процентная ставка <input type="number" name="interestRate">
-        Итоговая сумма выплаты <input type="number" name="resultSum">
+         <input type="number" name="resultSum">
         <input type="submit" value="Создать">
     </form>
 
     <#list contributions as contribution>
-        <h4><a href="/contribution/${contribution.getId()}">${contribution.getName()}</a></h4>
+        <a href="/contribution/${contribution.getId()}">${contribution.getName()}</a>
     </#list>
 
 

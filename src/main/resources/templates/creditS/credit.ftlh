@@ -18,7 +18,7 @@
     </form>
 
     <#list credits as credit>
-        <h4><a href="/credit/${credit.id}">${credit.getCreditName()}</a></h4>
+        <h4><a href="/credit/${credit.getId()}">${credit.getCreditName()}</a></h4>
     </#list>
 
     <form method="GET" action="/home">
