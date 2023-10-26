@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>RadionProfile</title>
 </head>
 <body>
     <div>
-        <h2>Профиль: </h2>
+        <h2>Профиль: Radion</h2>
     </div>
 
     <div>
@@ -18,9 +18,12 @@
         </ul>
     </div>
 
-    <div>
-        <h3>Карточка 1</h3>
-        <h5>Some numbers to case</h5>
-    </div>
+    <#list cardsList as card>
+        <div>
+            <h3><a href="/info-card/${card.getId()}">Карточка 1</a></h3>
+            <h5>${card.getSum()}</h5>
+        </div>
+    </#list>
+
 </body>
 </html>

@@ -20,9 +20,9 @@ public class ContributionService {
     @Getter
     private final List<Contribution> list = new ArrayList<>();
     {
-        list.add(new Contribution(++countId, "Auto", 100_000, 6.8f, null));
-        list.add(new Contribution(++countId, "Home", 1_500_000, 6.8f, null));
-        list.add(new Contribution(++countId, "Ipoteka", 15_000_000, 6.8f, null));
+        list.add(new Contribution(++countId, "Auto", 100_000, 6.8f));
+        list.add(new Contribution(++countId, "Home", 1_500_000, 6.8f));
+        list.add(new Contribution(++countId, "Ipoteka", 15_000_000, 6.8f));
     }
 
     public void saveContribution(Contribution contribution) {

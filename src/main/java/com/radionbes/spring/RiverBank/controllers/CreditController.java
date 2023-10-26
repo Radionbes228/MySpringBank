@@ -16,12 +16,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 @AllArgsConstructor
 public class CreditController {
     private final CreditService creditService;
-    private final ConstantValue constantValue;
-
     @GetMapping("/credit")
     public String getCredit(Model model){
         model.addAttribute("credits", creditService.getCrediteList());
-        return constantValue.getCREDIT_HOME();
+        return "creditS/credit";
     }
 
     @PostMapping("/credit")
@@ -34,7 +32,7 @@ public class CreditController {
     @GetMapping("/credit/{id}")
     public String getInfoCredit(@PathVariable Long id, Model model){
         model.addAttribute("credit", creditService.getCreditForId(id));
-        return constantValue.getCREDIT_INFO();
+        return "creditS/info-credit";
     }
 
 

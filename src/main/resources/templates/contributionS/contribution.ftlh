@@ -9,11 +9,10 @@
 </head>
 <body>
 
-    <form method="POST" action="/contribution/">
+    <form method="POST" action="/contribution">
         Имя вклада <input type="text" name="name">
         Сумма вклада <input type="number" name="sum">
-        Процентная ставка <input type="number" name="interestRate">
-         <input type="number" name="resultSum">
+        Процентная ставка ${constants}<input hidden="hidden" value="${constants}" type="number" name="interestRate">
         <input type="submit" value="Создать">
     </form>
 

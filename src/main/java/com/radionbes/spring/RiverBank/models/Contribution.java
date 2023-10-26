@@ -11,7 +11,7 @@ public class Contribution {
     private Integer sum;
     private Float interestRate;
 
-    public Contribution(Long id, String name, Integer sum, Float interestRate, Float resultSum) {
+    public Contribution(Long id, String name, Integer sum, Float interestRate) {
         this.id = id;
         this.name = name;
         this.sum = sum;
