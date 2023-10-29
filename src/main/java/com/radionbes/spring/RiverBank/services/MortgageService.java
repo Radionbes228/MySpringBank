@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class ContributionService {
+public class MortgageService {
     Logger logger = Logger.getLogger("log");
     private Long countId = 0L;
     @Getter

@@ -16,9 +16,13 @@
     <h3>${contribution.getSum()}</h3>
 
 
-<form method="GET" action="/contribution">
-    <input type="submit" value="Наад">
-</form>
+    <form method="GET" action="/mortgage">
+        <input type="submit" value="Наад">
+    </form>
+
+    <form method="GET" action="/home">
+        <input type="submit" value="Домой">
+    </form>
 
 </body>
 </html>

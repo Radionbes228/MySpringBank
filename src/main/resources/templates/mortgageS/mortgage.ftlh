@@ -9,16 +9,22 @@
 </head>
 <body>
 
-    <form method="POST" action="/contribution">
+    <form method="POST" action="/mortgage">
         Имя вклада <input type="text" name="name">
         Сумма вклада <input type="number" name="sum">
         Процентная ставка ${constants}<input hidden="hidden" value="${constants}" type="number" name="interestRate">
         <input type="submit" value="Создать">
     </form>
 
-    <#list contributions as contribution>
-        <a href="/contribution/${contribution.getId()}">${contribution.getName()}</a>
+    <#list mortgages as mortgage>
+        <a href="/mortgage/${mortgage.getId()}">${mortgage.getName()}</a>
     </#list>
+
+    <form method="GET" action="/home">
+        <input type="submit" value="Домой">
+    </form>
+
+
 
 
 

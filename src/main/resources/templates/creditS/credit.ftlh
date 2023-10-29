@@ -25,5 +25,9 @@
         <input type="submit" value="Назад">
     </form>
 
+    <form method="GET" action="/home">
+        <input type="submit" value="Домой">
+    </form>
+
 </body>
 </html>

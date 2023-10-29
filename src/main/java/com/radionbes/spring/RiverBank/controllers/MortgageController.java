@@ -2,7 +2,7 @@ package com.radionbes.spring.RiverBank.controllers;
 
 import com.radionbes.spring.RiverBank.constant.ConstantValue;
 import com.radionbes.spring.RiverBank.models.Contribution;
-import com.radionbes.spring.RiverBank.services.ContributionService;
+import com.radionbes.spring.RiverBank.services.MortgageService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,25 +12,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @AllArgsConstructor
-public class ContributionController {
-    private final ContributionService contributionService;
+public class MortgageController {
+    private final MortgageService mortgageService;
     private final ConstantValue constantValue;
-    @GetMapping("/contribution")
+
+    @GetMapping("/mortgage")
     public String contribution(Model model){
-        model.addAttribute("contributions", contributionService.getList());
+        model.addAttribute("mortgages", mortgageService.getList());
         model.addAttribute("constants", constantValue.getINTARASTE_RATE());
-        return "contributionS/contribution";
+        return "mortgageS/mortgage";
     }
 
-    @PostMapping("/contribution")
+    @PostMapping("/mortgage")
     public String contributionPost(Contribution contribution){
-        contributionService.saveContribution(contribution);
-        return "redirect:/contribution";
+        mortgageService.saveContribution(contribution);
+        return "redirect:/mortgage";
     }
 
-    @GetMapping("/contribution/{id}")
+    @GetMapping("/mortgage/{id}")
     public String contributionGetForID(@PathVariable("id") Long id, Model model){
-        model.addAttribute(contributionService.getForId(id));
-        return "contributionS/contribution-info";
+        model.addAttribute(mortgageService.getForId(id));
+        return "mortgageS/mortgage-info";
     }
 }
