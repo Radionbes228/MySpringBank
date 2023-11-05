@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/static/home.css">
+    <link href="/static/input.scss">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
@@ -22,25 +24,28 @@
     <title>Document</title>
 </head>
 <body>
-
-    <form method="POST" action="/mortgage">
-        Имя вклада <input type="text" class="form-control" name="name">
-        Сумма вклада <input type="number" class="form-control" name="sum">
-        Процентная ставка ${constants}<input class="form-control" hidden="hidden" value="${constants}" type="number" name="interestRate">
-        <input type="submit" class="btn btn-dark" value="Создать">
+    <form action="/contri" method="POST">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <p>Введите куда вкладываетесь</p><input type="text" class="form-control" name="name">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <p>Сумма вклада</p><input  type="number" name="sum" class="form-control">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <p>Процентная ставка</p><input type="text" name="interestRate" class="form-control">
+            </div>
+        </div>
+        <input type="submit" class="btn btn-dark" value="Добавть">
     </form>
 
-    <#list mortgages as mortgage>
-        <a href="/mortgage/${mortgage.getId()}">${mortgage.getName()}</a>
+
+    <#list contriES as contri>
+        <p><a href="/contri/info/${contri.getId()}">${contri.getName()}</a></p>
     </#list>
-
-    <form method="GET" action="/home">
-        <input type="submit" class="btn btn-dark" value="Домой">
-    </form>
-
-
-
-
-
 </body>
 </html>

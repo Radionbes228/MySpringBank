@@ -5,17 +5,17 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name = "Credit")
+@Table(name = "Contributions")
 @Data
-public class Credit {
+public class Contri {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-    @Column(name = "creditName")
-    private String creditName;
-    @Column(name = "loanAmount")
-    private Integer loanAmount;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "sum")
+    private Integer sum;
     @Column(name = "interestRate")
     private Float interestRate;
     @Column(name = "duration")
@@ -24,4 +24,6 @@ public class Credit {
     @ManyToOne(cascade = CascadeType.REFRESH)
     private UserBank owner;
 
+
 }
+

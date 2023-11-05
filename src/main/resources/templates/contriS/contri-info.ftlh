@@ -22,25 +22,9 @@
     <title>Document</title>
 </head>
 <body>
-
-    <form method="POST" action="/mortgage">
-        Имя вклада <input type="text" class="form-control" name="name">
-        Сумма вклада <input type="number" class="form-control" name="sum">
-        Процентная ставка ${constants}<input class="form-control" hidden="hidden" value="${constants}" type="number" name="interestRate">
-        <input type="submit" class="btn btn-dark" value="Создать">
-    </form>
-
-    <#list mortgages as mortgage>
-        <a href="/mortgage/${mortgage.getId()}">${mortgage.getName()}</a>
-    </#list>
-
-    <form method="GET" action="/home">
-        <input type="submit" class="btn btn-dark" value="Домой">
-    </form>
-
-
-
-
-
+    <p>${contri_info.getId()}</p>
+    <p>${contri_info.getName()}</p>
+    <p>${contri_info.getSum()}</p>
+    <p>${contri_info.getInterestRate()}</p>
 </body>
 </html>

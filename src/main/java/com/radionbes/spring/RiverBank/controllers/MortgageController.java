@@ -1,7 +1,7 @@
 package com.radionbes.spring.RiverBank.controllers;
 
 import com.radionbes.spring.RiverBank.constant.ConstantValue;
-import com.radionbes.spring.RiverBank.models.Contribution;
+import com.radionbes.spring.RiverBank.models.Mortgage;
 import com.radionbes.spring.RiverBank.services.MortgageService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -24,8 +24,8 @@ public class MortgageController {
     }
 
     @PostMapping("/mortgage")
-    public String contributionPost(Contribution contribution){
-        mortgageService.saveContribution(contribution);
+    public String contributionPost(Mortgage mortgage){
+        mortgageService.saveContribution(mortgage);
         return "redirect:/mortgage";
     }
 

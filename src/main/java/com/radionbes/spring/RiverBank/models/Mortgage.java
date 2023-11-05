@@ -2,20 +2,22 @@ package com.radionbes.spring.RiverBank.models;
 
 import com.radionbes.spring.RiverBank.Users.UserBank;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Credit")
+@Table(name = "Mortgage")
 @Data
-public class Credit {
+public class Mortgage {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
-    @Column(name = "creditName")
-    private String creditName;
-    @Column(name = "loanAmount")
-    private Integer loanAmount;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "sum")
+    private Integer sum;
     @Column(name = "interestRate")
     private Float interestRate;
     @Column(name = "duration")

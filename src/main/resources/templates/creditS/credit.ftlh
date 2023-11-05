@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Document</title>
 </head>
 <body>
     <form method="POST" action="/credit">
-        Credit name <input type="text"  name="creditName"><br><br>
-        Loan amount <input type="text" name="loanAmount"><br><br>
-        Loan owner <input type="text" name="loanOwner"><br><br>
-        Interest rate <input type="text"  name="interestRate"><br><br>
-        Term <input type="text" name="term"><br><br>
+        Имя кредита <input type="text"  name="creditName"><br><br>
+        Сумма кредита <input id="sum" type="number" name="loanAmount"><br><br>
+        Владелец кредита <input type="text" name="loanOwner"><br><br>
+        Продолжительность кредита <input type="number" id="duration" name="duration"><br><br>
         <input type="submit" value="Создать">
     </form>
 
@@ -22,12 +21,13 @@
     </#list>
 
     <form method="GET" action="/home">
-        <input type="submit" value="Назад">
+        <input type="submit" class="btn btn-dark" value="Назад">
     </form>
 
     <form method="GET" action="/home">
-        <input type="submit" value="Домой">
+        <input type="submit" class="btn btn-dark" value="Домой">
     </form>
+
 
 </body>
 </html>

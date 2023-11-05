@@ -1,8 +1,11 @@
 package com.radionbes.spring.RiverBank.services;
 
 import com.radionbes.spring.RiverBank.models.Card;
+import com.radionbes.spring.RiverBank.models.Credit;
+import com.radionbes.spring.RiverBank.repozitories.CreditRepozitories;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,11 +18,6 @@ public class CardsService {
     private Long countId = 0L;
     private final List<Card> cardList = new ArrayList<>();
 
-    {
-        cardList.add(new Card(++countId, 4650));
-        cardList.add(new Card(++countId, 1000));
-        cardList.add(new Card(++countId, 50));
-    }
 
     public Card getCardFoById(Long id) {
         for (Card card : cardList) {
