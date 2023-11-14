@@ -1,12 +1,16 @@
 package com.radionbes.spring.RiverBank.models;
 
-import com.radionbes.spring.RiverBank.Users.UserBank;
-import jakarta.persistence.*;
+import com.radionbes.spring.RiverBank.Users.User;
+import javax.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "Contributions")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Contri {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,7 +26,7 @@ public class Contri {
     private Integer duration;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
-    private UserBank owner;
+    private User owner;
 
 
 }

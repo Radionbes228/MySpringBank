@@ -4,21 +4,21 @@ import com.radionbes.spring.RiverBank.models.Card;
 import com.radionbes.spring.RiverBank.models.Contri;
 import com.radionbes.spring.RiverBank.models.Credit;
 import com.radionbes.spring.RiverBank.models.Mortgage;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.*;
+import java.util.*;
 
 @Table(name = "Users")
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserBank {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -29,6 +29,10 @@ public class UserBank {
     private String name;
     @Column(name = "patronymic")
     private String patronymic;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "password")
+    private String password;
     @Column(name = "dateOfBirth")
     private String dateOfBirth;
     @Column(name = "floor")
@@ -38,21 +42,51 @@ public class UserBank {
     @Column(name = "passportNumber")
     private String passportNumber;
 
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"))
+    @Enumerated(EnumType.STRING)
+    private Set<Role> roles = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     private List<Card> cardList = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany()
     private List<Credit> creditList = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     private List<Contri> contriList = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     private List<Mortgage> mortgageList = new ArrayList<>();
 
-    public void setFloor(Boolean floor) {
-        if (floor) this.floor = "Man";
-        else this.floor = "Woman";
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles;
+    }
+
+    @Override
+    public String getUsername() {
+        return getEmail();
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

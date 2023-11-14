@@ -1,12 +1,16 @@
 package com.radionbes.spring.RiverBank.models;
 
-import com.radionbes.spring.RiverBank.Users.UserBank;
-import jakarta.persistence.*;
+import com.radionbes.spring.RiverBank.Users.User;
+import javax.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "Credit")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Credit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,8 +24,10 @@ public class Credit {
     private Float interestRate;
     @Column(name = "duration")
     private Integer duration;
+    @Column(name = "activated")
+    private Boolean activated = true;
 
-    @ManyToOne(cascade = CascadeType.REFRESH)
-    private UserBank owner;
+    @ManyToOne(targetEntity = Credit.class)
+    private Long owner;
 
 }

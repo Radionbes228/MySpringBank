@@ -1,4 +1,4 @@
-package com.radionbes.spring.RiverBank.Rate;
+/*package com.radionbes.spring.RiverBank.Rate;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -29,4 +29,4 @@ public class ExchangeRate {
     }
 
 
-}
+}*/

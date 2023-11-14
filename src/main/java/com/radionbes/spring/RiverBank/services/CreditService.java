@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,9 +15,15 @@ import java.util.List;
 public class CreditService {
     private final CreditRepozitories creditRepozitories;
 
-    public List<Credit> creditList (String owner){
-        if (owner != null) creditRepozitories.findCreditByOwner(owner);
-        return creditRepozitories.findAll();
+    public List<Credit> creditList (Long idUser){
+        if (creditRepozitories.findCreditsByOwnerId(idUser) != null){
+            List<Credit> returnList = new ArrayList<>();
+            for (Credit o: creditRepozitories.findCreditsByOwnerId(idUser)) {
+                if (o.getActivated()) returnList.add(o);
+            }
+            return returnList;
+        }
+        return null;
     }
 
     public void saveCredit(Credit credit){

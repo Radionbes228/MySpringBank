@@ -1,0 +1,25 @@
+.dopInfo{
+    scroll-snap-align: start;
+    max-width: 18rem;
+    text-decoration: none;
+}
+
+.myCard{
+    overflow-y: scroll;
+    background-color: darkgreen;
+    max-height: 600px;
+    width: 280px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.myCard::-webkit-scrollbar {
+    width: 7px;
+    background-color: #f9f9fd;
+}
+
+
+.home_button{
+    width: 90px;
+}

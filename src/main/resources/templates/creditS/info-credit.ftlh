@@ -22,11 +22,12 @@
     <title>Кредит: ${credit.getCreditName()}</title>
 </head>
 <body>
+
+
     <form >
         <b>${credit.getId()}</b>
         <h3>${credit.getCreditName()}</h3>
         <h3>${credit.getLoanAmount()} р.</h3>
-        <h3>${credit.getLoanOwner()}</h3>
         <h3>${credit.getInterestRate()}%</h3>
     </form>
 
